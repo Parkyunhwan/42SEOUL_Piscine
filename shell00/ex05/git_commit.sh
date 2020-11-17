@@ -1,2 +1,1 @@
-#!/bin/sh
-git log | grep commit | sed "s/commit //g" | tail -n 5
+git log --pretty=format:%H -n 5
