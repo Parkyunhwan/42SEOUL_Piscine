@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_is_negative.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ypark <ypark@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/22 01:56:41 by ypark             #+#    #+#             */
-/*   Updated: 2020/11/22 01:58:12 by ypark            ###   ########.fr       */
+/*   Created: 2020/11/22 02:01:08 by ypark             #+#    #+#             */
+/*   Updated: 2020/11/22 05:33:38 by ypark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void		ft_print_reverse_alphabet(void)
+void		ft_print_comb2(void)
 {
-	char ch;
+	char numbers[5];
+	int i;
 
-	ch = 'z';
-	while (ch != 'a')
+	i = 0;
+	while (i < 10000)
 	{
-		write(1, &ch, 1);
-		ch--;
+		numbers[0] = i / 1000 + '0';
+		numbers[1] = (i % 1000) / 100 + '0';
+		numbers[2] = ' ';
+		numbers[3] = (i % 1000) % 100 / 10 + '0';
+		numbers[4] = (i % 1000) % 100 % 10 + '0';
+		if ((i / 100) < (i % 100))
+		{
+			write(1, &numbers, 5);
+			if (!((i / 100 == 98) && (i % 100 == 99)))
+				write(1, ", ", 2);
+		}
+		i++;
 	}
-	write(1, &ch, 1);
 }

@@ -1,5 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ypark <ypark@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/22 01:45:43 by ypark             #+#    #+#             */
+/*   Updated: 2020/11/22 01:59:07 by ypark            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
-void ft_print_alphabet()
+
+void		ft_print_alphabet(void)
 {
-	write(1, "abcdefghijklmnopqrstuvwxyz", 26);
+	char ch;
+
+	ch = 'a';
+	while (ch != 'z')
+	{
+		write(1, &ch, 1);
+		ch++;
+	}
+	write(1, &ch, 1);
 }

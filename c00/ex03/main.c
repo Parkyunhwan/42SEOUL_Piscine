@@ -1,26 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ypark <ypark@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/22 01:56:41 by ypark             #+#    #+#             */
-/*   Updated: 2020/11/22 01:58:12 by ypark            ###   ########.fr       */
+/*   Created: 2020/11/21 11:31:44 by ypark             #+#    #+#             */
+/*   Updated: 2020/11/21 11:41:10 by ypark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void		ft_print_reverse_alphabet(void)
+void ft_print_numbers(void);
+int main()
 {
-	char ch;
-
-	ch = 'z';
-	while (ch != 'a')
-	{
-		write(1, &ch, 1);
-		ch--;
-	}
-	write(1, &ch, 1);
+	ft_print_numbers();
 }
