@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat_save.c                                  :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ypark <ypark@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/28 22:17:48 by ypark             #+#    #+#             */
-/*   Updated: 2020/11/28 22:18:02 by ypark            ###   ########.fr       */
+/*   Created: 2020/11/28 22:49:18 by ypark             #+#    #+#             */
+/*   Updated: 2020/11/28 22:49:20 by ypark            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char		*ft_strncat(char *dest, char *src, unsigned int nb)
+int		ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int i;
-	int j;
-
-	i = 0;
-	j = 0;
-	while (dest[i])
-		i++;
-	while (src[j] && nb)
+	while (n && (*s1 || *s2))
 	{
-		dest[i] = src[j];
-		i++;
-		j++;
-		nb--;
+		if (*s1 > *s2)
+			return (*s1 - *s2);
+		else if (*s1 < *s2)
+			return (*s1 - *s2);
+		s1++;
+		s2++;
+		n--;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (0);
 }

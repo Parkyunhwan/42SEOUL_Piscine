@@ -1,42 +1,37 @@
-#include <string.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ypark <ypark@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/28 22:45:11 by ypark             #+#    #+#             */
+/*   Updated: 2020/11/28 22:46:34 by ypark            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 unsigned int		ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int *ptr;
-	int i;
-	int j;
-	int len;
-	int tmp;
+	unsigned int	i;
+	unsigned int	j;
+	unsigned int	tmp;
 
 	i = 0;
-	while(dest[i])
+	while (dest[i])
 		i++;
 	tmp = i;
 	j = 0;
-	while(src[j] && i + 1 < size)
+	while (src[j] && i + 1 < size)
 	{
-		dest[i] = src[j];	
+		dest[i] = src[j];
 		i++;
 		j++;
 	}
 	dest[i] = '\0';
-	while(src[j])
-		j++;	
+	while (src[j])
+		j++;
 	if (size < tmp)
 		return (j + size);
 	else
 		return (j + tmp);
-}
-
-int main()
-{
-	char a[20] = "aeasdfaef";
-	char b[20] = "eij";
-	unsigned int s = 4;
-	printf("%u\n", ft_strlcat(a, b, s));
-	printf("%s\n", a);
-	char c[20] = "aeasfasff";
-	char d[20] = "eij";
-	printf("%lu\n", strlcat(c, d, s));
-	printf("%s\n", c);
 }

@@ -1,14 +1,25 @@
-#include <stdio.h>
-char		*ft_strcat(char *dest, char* src)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ypark <ypark@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/28 21:14:57 by ypark             #+#    #+#             */
+/*   Updated: 2020/11/28 21:24:33 by ypark            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+char		*ft_strcat(char *dest, char *src)
 {
-	int	i;
+	int		i;
 	char	*ptr;
-	
-	ptr = dest; 
-	while(*ptr)
+
+	ptr = dest;
+	while (*ptr)
 		ptr++;
 	i = 0;
-	while(*src)
+	while (*src)
 	{
 		*ptr = *src;
 		ptr++;
@@ -16,11 +27,4 @@ char		*ft_strcat(char *dest, char* src)
 	}
 	*ptr = '\0';
 	return (dest);
-}
-
-int main()
-{
-	char d[10] = "abcd";
-	char s[10] = "efgh";
-	printf("%s", ft_strcat(d, s));
 }
